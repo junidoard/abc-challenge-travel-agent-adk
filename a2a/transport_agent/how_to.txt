@@ -1,0 +1,1 @@
+uvicorn transport_agent.agent:a2a_app --host localhost --port 8003 --root-path /a2a/transport_agent

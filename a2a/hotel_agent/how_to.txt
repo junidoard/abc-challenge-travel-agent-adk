@@ -1,0 +1,1 @@
+uvicorn hotel_agent.agent:a2a_app --host localhost --port 8002 --root-path /a2a/hotel_agent

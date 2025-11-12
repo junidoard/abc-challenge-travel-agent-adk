@@ -1,0 +1,1 @@
+uvicorn document_agent.agent:a2a_app --host localhost --port 8004 --root-path /a2a/document_agent
