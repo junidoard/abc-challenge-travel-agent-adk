@@ -1,0 +1,5 @@
+uvicorn
+google-adk
+google-cloud-aiplatform[adk,agent_engines] @ git+https://github.com/googleapis/python-aiplatform.git@bf1851e59cb34e63b509a2a610e72691e1c4ca28
+google-adk[a2a]
+a2a-sdk

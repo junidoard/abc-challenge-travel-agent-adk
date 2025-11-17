@@ -1,1 +1,10 @@
 uvicorn hotel_agent.agent:a2a_app --host localhost --port 8002 --root-path /a2a/hotel_agent
+
+gcloud run deploy hotel-agent \
+    --source a2a/hotel_agent \
+    --port=8080 \
+    --allow-unauthenticated \
+    --min 1 \
+    --region us-central1 \
+    --update-env-vars GOOGLE_CLOUD_LOCATION=us-central1 \
+    --update-env-vars GOOGLE_CLOUD_PROJECT=id-iprd-1111-ps-abcchallenge

@@ -1,0 +1,41 @@
+Just to add some additional info: in some cases, the service account is not automatically created by Google, and you may need to create it manually. 
+For anyone in the same situation, here’s the official documentation on how to create service agents. 
+https://cloud.google.com/iam/docs/create-service-agents
+
+for CREATE
+adk deploy agent_engine --project=id-iprd-1111-ps-abcchallenge --region=us-central1 --staging_bucket=gs://id-iprd-1111-ps-abcchallenge-adk-staging --display_name=bigquery-adk-agent_2 --requirements_file=requirements.txt bqagentapp
+
+for UPDATE
+adk deploy agent_engine --project=id-iprd-1111-ps-abcchallenge --region=us-central1 --staging_bucket=gs://id-iprd-1111-ps-abcchallenge-adk-staging --agent_engine_id=8689735063429971968 --display_name=bigquery-adk-agent --requirements_file=requirements.txt bqagentapp
+
+Options:
+  --project TEXT                  Required. Google Cloud project to deploy the agent. It will override GOOGLE_CLOUD_PROJECT in the .env file (if it exists).
+  --region TEXT                   Required. Google Cloud region to deploy the agent. It will override GOOGLE_CLOUD_LOCATION in the .env file (if it exists).
+  --staging_bucket TEXT           Required. GCS bucket for staging the deployment artifacts.
+  --agent_engine_id TEXT          Optional. ID of the Agent Engine instance to update if it exists (default: None, which means a new instance will be created). The corresponding resource name in Agent
+                                  Engine will be: `projects/{project}/locations/{region}/reasoningEngines/{agent_engine_id}`.
+  --trace_to_cloud                Optional. Whether to enable Cloud Trace for Agent Engine.
+  --display_name TEXT             Optional. Display name of the agent in Agent Engine.  [default: ""]
+  --description TEXT              Optional. Description of the agent in Agent Engine.  [default: ""]
+  --adk_app TEXT                  Optional. Python file for defining the ADK application (default: a file named agent_engine_app.py)
+  --temp_folder TEXT              Optional. Temp folder for the generated Agent Engine source files. If the folder already exists, its contents will be removed. (default: a timestamped folder in the
+                                  system temp directory).
+  --env_file TEXT                 Optional. The filepath to the `.env` file for environment variables. (default: the `.env` file in the `agent` directory, if any.)
+  --requirements_file TEXT        Optional. The filepath to the `requirements.txt` file to use. (default: the `requirements.txt` file in the `agent` directory, if any.)
+  --absolutize_imports BOOLEAN    Optional. Whether to absolutize imports. If True, all relative imports will be converted to absolute import statements (default: True). NOTE: This flag is temporary and
+                                  will be removed in the future.
+  --agent_engine_config_file TEXT
+                                  Optional. The filepath to the `.agent_engine_config.json` file to use. The values in this file will be overriden by the values set by other flags. (default: the
+                                  `.agent_engine_config.json` file in the `agent` directory, if any.)
+  --help                          Show this message and exit.
+
+travel_agent
+adk deploy agent_engine --project=id-iprd-1111-ps-abcchallenge --region=us-central1 --staging_bucket=gs://id-iprd-1111-ps-abcchallenge-adk-staging --display_name=travel_agent --requirements_file=requirements.txt travel_agent
+
+update
+adk deploy agent_engine --project=id-iprd-1111-ps-abcchallenge --region=us-central1 --staging_bucket=gs://id-iprd-1111-ps-abcchallenge-adk-staging --agent_engine_id=1231325479760297984 --display_name=travel_agent --requirements_file=requirements.txt travel_agent
+
+
+
+document_agent
+adk deploy agent_engine --project=id-iprd-1111-ps-abcchallenge --region=us-central1 --staging_bucket=gs://id-iprd-1111-ps-abcchallenge-adk-staging --display_name=document_agent --requirements_file=requirements.txt document_agent

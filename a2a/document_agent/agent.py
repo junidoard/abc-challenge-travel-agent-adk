@@ -10,7 +10,8 @@ os.environ["GOOGLE_CLOUD_LOCATION"] = "us-central1"
 
 document_agent_card = AgentCard(
     name="document_agent",
-    url="http://localhost:8004",
+    # url="http://localhost:8004",
+    url="https://document-agent-333079573063.us-central1.run.app",
     description="Helpful assistant that can provide information about necessary travel documents.",
     version="1.0.0",
     capabilities=AgentCapabilities(),

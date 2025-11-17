@@ -10,7 +10,8 @@ os.environ["GOOGLE_CLOUD_LOCATION"] = "us-central1"
 
 transport_agent_card = AgentCard(
     name="transport_agent",
-    url="http://localhost:8003",
+    # url="http://localhost:8003",
+    url="https://transport-agent-333079573063.us-central1.run.app",
     description="Helpful assistant that can provide transportation information.",
     version="1.0.0",
     capabilities=AgentCapabilities(),

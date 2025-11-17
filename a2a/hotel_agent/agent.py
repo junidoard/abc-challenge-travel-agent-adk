@@ -10,7 +10,8 @@ os.environ["GOOGLE_CLOUD_LOCATION"] = "us-central1"
 
 hotel_agent_card = AgentCard(
     name="hotel_agent",
-    url="http://localhost:8002",
+    # url="http://localhost:8002",
+    url="https://hotel-agent-333079573063.us-central1.run.app",
     description="Helpful assistant that can provide nearby hotels information.",
     version="1.0.0",
     capabilities=AgentCapabilities(),
@@ -18,7 +19,7 @@ hotel_agent_card = AgentCard(
         {
             "id": "hotel_agent",
             "name": "Hotel Agent Assitant",
-            "description": "Helpful assistant that can provide 7nearby hotels information.",
+            "description": "Helpful assistant that can provide nearby hotels information.",
             "tags": ["hotel", "hotel information", "nearby hotels"],
         }
     ],

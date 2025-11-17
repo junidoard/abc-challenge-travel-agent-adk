@@ -1,1 +1,10 @@
 uvicorn document_agent.agent:a2a_app --host localhost --port 8004 --root-path /a2a/document_agent
+
+gcloud run deploy document-agent \
+    --source a2a/document_agent \
+    --port=8080 \
+    --allow-unauthenticated \
+    --min 1 \
+    --region us-central1 \
+    --update-env-vars GOOGLE_CLOUD_LOCATION=us-central1 \
+    --update-env-vars GOOGLE_CLOUD_PROJECT=id-iprd-1111-ps-abcchallenge

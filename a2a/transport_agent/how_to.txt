@@ -1,1 +1,10 @@
 uvicorn transport_agent.agent:a2a_app --host localhost --port 8003 --root-path /a2a/transport_agent
+
+gcloud run deploy transport-agent \
+    --source a2a/transport_agent \
+    --port=8080 \
+    --allow-unauthenticated \
+    --min 1 \
+    --region us-central1 \
+    --update-env-vars GOOGLE_CLOUD_LOCATION=us-central1 \
+    --update-env-vars GOOGLE_CLOUD_PROJECT=id-iprd-1111-ps-abcchallenge
