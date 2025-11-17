@@ -23,7 +23,7 @@ class WeatherTool(Tool):
     ]
 
     def _run(self, location: str, date: str) -> str:
-        api_key = "AIzaSyDYhqnzXj4ddnnjxQVFiXzDo4uzGVjPAkQ"  # User needs to set this environment variable
+        api_key = ""  # User needs to set this environment variable
         if not api_key:
             return "Error: GOOGLE_MAPS_API_KEY environment variable is not set."
 
