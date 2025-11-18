@@ -75,7 +75,14 @@ ai_travel_planner = LlmAgent(
         document_agent,
         # summarize_agent,
     ],
-    tools=[AgentTool(agent=planner_agent), AgentTool(agent=summarize_agent)],
+    tools=[
+        AgentTool(agent=planner_agent),
+        AgentTool(agent=summarize_agent),
+        AgentTool(agent=weather_agent),
+        AgentTool(agent=hotel_agent),
+        AgentTool(agent=transport_agent),
+        AgentTool(agent=document_agent),
+    ],
 )
 
 root_agent = ai_travel_planner
